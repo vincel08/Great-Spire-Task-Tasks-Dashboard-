@@ -1,0 +1,72 @@
+/* Container for the entire board */
+.task-board {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Each status column */
+.status-column {
+  flex: 1;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Column header */
+.status-column h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Task item */
+.task-item {
+  background-color: #fff;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Task title */
+.task-item span {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Completed task */
+.task-item.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Buttons container */
+.task-actions {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.task-actions button {
+  padding: 4px 6px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.task-actions button:hover {
+  opacity: 0.9;
+}
+
+/* Status-specific button colors */
+.move-btn {
+  background-color: #2196f3;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}

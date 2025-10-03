@@ -7,7 +7,9 @@ export default function App() {
   const [title, setTitle] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Get tasks
+  /**
+   * Get all tasks
+   */
   const fetchTasks = async () => {
     try {
       setLoading(true);
@@ -24,7 +26,9 @@ export default function App() {
     fetchTasks();
   }, []);
 
-  // Create task
+  /**
+   * Add task
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -43,7 +47,9 @@ export default function App() {
     }
   };
 
-  // Update task
+  /**
+   * Update task status
+   */
   const handleStatusChange = async (id, newStatus) => {
     try {
       const task = tasks.find((t) => t.id === id);
@@ -56,7 +62,9 @@ export default function App() {
     }
   };
 
-  // Delete task
+  /**
+   * Delete task
+   */
   const handleDelete = async (id) => {
     try {
       await deleteTask(id);

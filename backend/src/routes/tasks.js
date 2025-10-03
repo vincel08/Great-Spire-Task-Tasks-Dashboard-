@@ -64,9 +64,8 @@ router.patch("/tasks/:id", (req, res) => {
       completed = completed ? 1 : 0;
     }
 
-    // Validate status if provided
     if (status && !["todo", "in-progress", "done"].includes(status)) {
-      status = undefined; // ignore invalid status
+      status = undefined;
     }
 
     const stmt = db.prepare(`

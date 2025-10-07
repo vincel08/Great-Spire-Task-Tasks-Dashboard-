@@ -5,6 +5,7 @@ import TaskBoard from "./components/TaskBoard";
 export default function App() {
   const [tasks, setTasks] = useState([]);
   const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
   const [loading, setLoading] = useState(false);
 
   /**
@@ -39,9 +40,14 @@ export default function App() {
     }
 
     try {
-      const res = await addTask({ title: trimmedTitle, status: "todo" });
+      const res = await addTask({
+        title: trimmedTitle,
+        description: description,
+        status: "todo",
+      });
       setTasks((prev) => [...prev, res.data]);
       setTitle("");
+      setDescription("");
     } catch (err) {
       console.error("Add task error:", err);
     }
@@ -82,6 +88,11 @@ export default function App() {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="New task"
+        />
+        <input
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          placeholder="Description"
         />
         <button type="submit">Add Task</button>
         <button

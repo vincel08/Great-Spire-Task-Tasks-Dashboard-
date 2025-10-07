@@ -17,7 +17,8 @@ export default function TaskBoard({ tasks, onStatusChange, onDelete }) {
                   key={task.id}
                   className={`task-item ${task.completed ? "completed" : ""}`}
                 >
-                  <span>{task.title}</span>
+                  <h1>{task.title}</h1>
+                  <span>{task.description}</span>
                   <div className="task-actions">
                     {statuses
                       .filter((s) => s !== status)

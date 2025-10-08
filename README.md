@@ -30,7 +30,7 @@ npm install
 node src/server.js
 ```
 
-### Start the backend
+### Start the frontend
 
 ```bash
 cd backend
